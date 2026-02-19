@@ -1,0 +1,470 @@
+/**
+ * ============================================
+ * ZAPVERSE DESIGN SYSTEM - TAILWIND CSS v4
+ * ============================================
+ * 
+ * Optimized structure based on your existing design.
+ * Key changes:
+ * 1. Fixed @theme inline → @theme
+ * 2. Better organization of tokens
+ * 3. Added mobile-first utilities
+ * 4. Maintained your semantic naming
+ */
+
+@import "tailwindcss";
+
+/* ============================================
+   1. PRIMITIVE TOKENS (Design Primitives)
+   ============================================
+   Base values that rarely change.
+   These feed into semantic tokens below.
+*/
+:root {
+  /* ======= Brand Colors ======= */
+  --brand-blue-500: #2DC2FF;
+  --brand-purple-500: #694DFF;
+  
+  /* ======= Neutral Scale ======= */
+  /* Light */
+  --neutral-50: #FFFFFF;
+  --neutral-100: #EEEEEE;
+  --neutral-200: #F0F0F0;
+  --neutral-850: #808080;
+  
+  /* Dark */
+  --neutral-300: #B2B2B2;
+  --neutral-350: #ADADAD;
+  --neutral-400: #ACACAC;
+  --neutral-450: #6D6D6D;
+  --neutral-500: #2E2E2E;
+  --neutral-600: #1D1D1D;
+  --neutral-700: #1A1A1A;
+  --neutral-800: #171717;
+  --neutral-900: #111111;
+  --neutral-950: #0D0C0F;
+  
+  
+  /* ======= Typography ======= */
+  /* Font Families */
+  --font-archivo: "Archivo", sans-serif;
+  --font-plex-mono: "IBM Plex Mono", monospace;
+  
+  /* Font Weights */
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  
+  /* ======= Border Radius ======= */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  
+  /* ======= Gradients ======= */
+  --gradient-brand-primary: linear-gradient(135deg, #2DC2FF 0%, #694DFF 100%);
+  --color-bg-light: radial-gradient(circle, #F0F0F0 100%, #FFFFFF 100%);
+}
+
+/* ============================================
+   2. SEMANTIC TOKENS (Role-Based)
+   ============================================
+   What the colors/fonts are USED for.
+   These can change based on theme (light/dark).
+*/
+:root {
+  /* ===== Background Roles ===== */
+  --color-background: var(--neutral-950);
+  --color-surface: var(--neutral-900);
+  --color-section: var(--neutral-800);
+  --color-card: var(--neutral-700);
+  --color-input: var(--neutral-500);
+
+  /* ===== Text Roles ===== */
+  --color-foreground: var(--neutral-100);
+  --color-muted: var(--neutral-400);
+  --color-subtle: var(--neutral-300);
+  
+  /* ===== Brand Roles ===== */
+  --color-primary: var(--brand-blue-500);
+  --color-secondary: var(--brand-purple-500);
+
+  /* ===== Gradient ===== */
+  --gradient-primary: var(--gradient-brand-primary);
+
+  /* ===== Font Roles ===== */
+  --font-heading: var(--font-archivo);
+  --font-body: var(--font-plex-mono);
+}
+
+/* ============================================
+   3. TAILWIND THEME (@theme)
+   ============================================
+   Register tokens with Tailwind for use in classes.
+   Format: --color-{name}-{variant}: {value};
+*/
+@theme {
+  /* ===== COLORS ===== */
+  
+  /* Brand Colors - For use as bg-brand-blue-500, text-brand-blue-500, etc. */
+  --color-brand-blue-500: #2DC2FF;
+  --color-brand-purple-500: #694DFF;
+  
+  /* Neutral Scale */
+  --color-neutral-50: #FFFFFF;
+  --color-neutral-100: #EEEEEE;
+  --color-neutral-200: #F0F0F0;
+  --color-neutral-300: #B2B2B2;
+  --color-neutral-350: #ADADAD;
+  --color-neutral-400: #ACACAC;
+  --color-neutral-450: #6D6D6D;
+  --color-neutral-500: #2E2E2E;
+  --color-neutral-600: #1D1D1D;
+  --color-neutral-700: #1A1A1A;
+  --color-neutral-800: #171717;
+  --color-neutral-900: #111111;
+  --color-neutral-950: #0D0C0F;
+  --color-neutral-850: #808080;
+  
+  /* Semantic Colors - For use as bg-background, text-foreground, etc. */
+  --color-background: var(--neutral-950);
+  --color-surface: var(--neutral-900);
+  --color-section: var(--neutral-800);
+  --color-card: var(--neutral-700);
+  --color-input: var(--neutral-500);
+  --color-foreground: var(--neutral-100);
+  --color-muted: var(--neutral-400);
+  --color-subtle: var(--neutral-300);
+  --color-primary: var(--brand-blue-500);
+  --color-secondary: var(--brand-purple-500);
+  
+  /* ===== TYPOGRAPHY ===== */
+  
+  /* Font Families */
+  --font-family-heading: "Archivo", sans-serif;
+  --font-family-body: "IBM Plex Mono", monospace;
+  
+  /* Font Sizes - Responsive with clamp() */
+  /* Display (Hero) */
+  --font-size-display: clamp(2.5rem, 2.667rem + 1.667vw, 3.5rem);
+  
+  /* Headings */
+  --font-size-h1: clamp(2rem, 1.667rem + 1.667vw, 3rem);
+  --font-size-h2: clamp(1.5rem, 1.667rem + 1.667vw, 1.8rem);        
+  --font-size-h3: clamp(1.125rem, 0.999rem + 0.625vw, 1.5rem);
+  
+  /* Body */
+  --font-size-body-lg: 1.125rem;  /* 18px */
+  --font-size-body: 1rem;         /* 16px */
+  --font-size-ui: 1rem;           /* 16px */
+  
+  /* Font Weights */
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  
+  /* ===== BORDER RADIUS ===== */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  
+  /* ===== SPACING ===== */
+  /* Add any custom spacing if needed beyond Tailwind defaults */
+  
+  /* ===== SHADOWS ===== */
+  /* Add shadow tokens here if you have them */
+}
+
+/* ============================================
+   4. BASE STYLES
+   ============================================
+*/
+* {
+  /* border-color: var(--color-input); */
+}
+
+body {
+  background: var(--neutral-900);
+  font-family: var(--font-heading);
+  font-size: 16px;
+  /* Better font rendering */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+ul li{
+color: #808080;
+}
+
+ul li:hover{
+  color: #FFFFFF;
+  transition-duration: 100ms;
+}
+
+.copyRight{
+  color: var(--neutral-450);
+}
+
+.eyeBrow{
+  color: var(--neutral-350);
+  font-family: var(--font-heading);
+  font-size: 14px;
+  line-height: 20px;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  background-color: var(--color-neutral-600);
+  border: 1px solid #282828;
+  border-radius: 45px;
+}
+
+.valuecard{
+  background-color: var(--neutral-600);
+}
+
+.lastValue{
+  background-image: url('/src/assets/images/mobilevalue.png');
+  height: 350px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right top;
+  @media(min-width:768px){
+    background-image: url('/src/assets/images/lastvalue.png');
+    background-position: right center;
+    height: 200px;
+  }
+}
+
+/* ============================================
+   5. UTILITY CLASSES
+   ============================================
+   Your custom semantic classes.
+*/
+@layer utilities {
+  
+  /* ===== BACKGROUND UTILITIES ===== */
+  .bg-gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  /* .btn-gradient{
+    linear-gradient(to right, A 0%, B 51%, A 100%)
+    background: linear-gradient(to right,#2DC2FF 0%, #694DFF );
+  } */
+
+  .bg-radial{
+    background: var(--color-bg-light);
+  }
+  
+  .bg-gradient-light {
+    background: var(--color-bg-light);
+  }
+
+  .color-gray{
+    color: var(--neutral-850);
+  }
+  
+  
+  /* ===== TYPOGRAPHY UTILITIES ===== */
+  
+  /* Display (Hero) */
+  .text-display {
+    font-family: var(--font-heading);
+    font-size: var(--font-size-display);
+    font-weight: var(--font-weight-bold);
+    line-height: 62px;
+  }
+  
+  /* H1 - Major Sections */
+  .text-h1 {
+    font-family: var(--font-heading);
+    font-size: var(--font-size-h1);
+    font-weight: var(--font-weight-bold);
+  }
+
+  .bg-hero{
+    background-image: url('./assets/images/herosection.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+
+  .cta-section{
+    width: 100%;
+    height: 420px;
+    background-image: url('/src/assets/images/mobilecta.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 16px;
+    @media(min-width:768px){
+      background-image: url('/src/assets/images/contactbg.png');
+    }
+  }
+
+  .graph-section{
+    width: 100%;
+    /* Fluid height scaling */
+    min-height: clamp(900px, 60vw, 850px);
+    background-image: url('/src/assets/images/mblgraph.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    @media(min-width:768px){
+      background-image: url('/src/assets/images/graph.png');
+      /* Slightly smaller max for desktop */
+      min-height: clamp(650px, 55vw, 750px);
+    }
+  }
+  
+  
+  /* Mobile adjustment for H1 */
+  @media (max-width: 768px) {
+    .text-display{
+      line-height: 48px;
+    }
+    .text-h1 {
+      line-height: 40px;
+    }
+  }
+  
+  /* H2 - Subsections */
+  .text-h2 {
+    font-family: var(--font-heading);
+    font-size: var(--font-size-h2);
+  }
+  
+  /* H3 - Card Titles */
+  .text-h3 {
+    font-family: var(--font-heading);
+    font-size: var(--font-size-h3);
+  }
+  
+  /* Body Large */
+  .text-body-lg {
+    font-family: var(--font-body);
+    font-size: var(--font-size-body-lg);
+  }
+  
+  /* Body (Default) */
+  .text-body {
+    font-family: var(--font-body);
+    font-size: var(--font-size-body);
+  }
+  
+  /* UI Text (Nav / Buttons / Labels) */
+  .text-ui {
+    font-family: var(--font-heading);
+  }
+
+  .tab-title{
+    font-family: var(--font-heading);
+    font-size: 18px;
+  }
+  
+  /* ===== MOBILE-FIRST RESPONSIVE UTILITIES ===== */
+  
+  /* Container with max-width */
+  .container-custom {
+    width: 100%;
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  @media (min-width: 768px) {
+    .container-custom {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+    .text-h1{
+      line-height: 56px;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .container-custom {
+      padding-left: 3rem;
+      padding-right: 3rem;
+    }
+  }
+  
+  /* Section spacing - Mobile first */
+  .section-spacing {
+    padding-top: 3rem;      /* Mobile: 48px */
+    padding-bottom: 3rem;
+  }
+  
+  @media (min-width: 768px) {
+    .section-spacing {
+      padding-top: 3rem;    /* Tablet: 80px */
+      padding-bottom: 3rem;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .section-spacing {
+      padding-top: 4rem;    /* Desktop: 96px */
+      padding-bottom: 4rem;
+    }
+  }
+  
+  /* Card base styles */
+  .card-base {
+    background-color: var(--color-card);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;        /* Mobile: 24px */
+  }
+  
+  @media (min-width: 768px) {
+    .card-base {
+      padding: 2rem;        /* Tablet: 32px */
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .card-base {
+      padding: 2.5rem;      /* Desktop: 40px */
+    }
+  }
+}
+
+/* ============================================
+   6. COMPONENT PATTERNS
+   ============================================
+   Common reusable patterns.
+*/
+
+/* Gradient text effect */
+.gradient-text {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Center content */
+.center-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Truncate text */
+.text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.industryCard{
+  background-color: var(--color-neutral-600);
+  border: 1px solid #2B2B2B;
+  border-radius: 16px;
+}
+
+.tabCard{
+  background-color: var(--color-neutral-600);
+  border: 1px solid #2B2B2B;
+  border-radius: 8px;
+}
