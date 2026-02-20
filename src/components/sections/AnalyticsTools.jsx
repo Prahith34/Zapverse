@@ -8,7 +8,7 @@ import safetycheck from '@/assets/icons/safetycheck.svg'
 
 const AnalyticsTools = () => {
   return (
-    <section className='container-custom section-spacing bg-card'>
+    <section className='container-custom section-spacing'>
         <div className='flex flex-col items-center justify-center'>
             <span className='w-fit inline-flex items-center gap-2 font-bold text-start eyeBrow'>
                 <span className='w-5'><Dot /></span>
@@ -22,16 +22,16 @@ const AnalyticsTools = () => {
                 <Lottie animationData={Analytics} loop={true} autoplay={true}></Lottie>
             </div>
         </div>
-        <div className='grid grid-cols-1 lg:grid-cols-3 gap-4 pt-8'>
+        <div className='grid grid-cols-1 lg:grid-cols-3 gap-8 pt-8'>
             <div className='pl-4 border-l-2 border-l-[#505050]'>
-                <div className='inline-flex gap-3.5'>
+                <div className='inline-flex items-center gap-3.5'>
                     <img src={search} alt="Search Icon" />
                     <h3 className='text-h3 text-white'>Deep Content Consumption Insights</h3>
                 </div>
                 <p className='text-subtle'>Understand how audiences engage with content across regions, formats, and devices—down to the asset level.</p>
             </div>
             <div className='pl-4 border-l-2 border-l-[#505050]'>
-                <div className='inline-flex gap-3.5'>
+                <div className='inline-flex items-center gap-3.5'>
                     <img src={ticker} alt="ticekr Icon" />
                     <h3 className='text-h3 text-white'>Predictive Decision Pathways</h3>
                 </div>
@@ -39,7 +39,7 @@ const AnalyticsTools = () => {
                     and how to target high-return opportunities using AI-generated execution insights.</p>
             </div>
             <div className='pl-4 border-l-2 border-l-[#505050]'>
-                <div className='inline-flex gap-3.5'>
+                <div className='inline-flex items-center gap-3.5'>
                     <img src={safetycheck} alt="ticekr Icon" />
                     <h3 className='text-h3 text-white'>Workflow Health & Risk Detection</h3>
                 </div>

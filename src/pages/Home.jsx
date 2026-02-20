@@ -18,7 +18,9 @@ const Home = () => {
         <Hero/>
       </section>
       <ProblemStatement/>
-      <AnalyticsTools/>
+      <section className='bg-card'>
+        <AnalyticsTools />
+      </section>
       <IndustrySolutions/>
       <WhyZapverse/>
       <StatsSection/>

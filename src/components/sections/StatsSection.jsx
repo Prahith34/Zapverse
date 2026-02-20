@@ -10,7 +10,7 @@ const stats = [
 
 const StatsSection = () => {
   return (
-    <section className='container-custom section-spacing'>
+    <section className='container-custom'>
       {/* Section Header */}
       <div className='graph-section lg:p-8'>
         <span className='w-fit inline-flex items-center gap-2 font-bold text-start eyeBrow'>

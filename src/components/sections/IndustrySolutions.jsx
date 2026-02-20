@@ -34,7 +34,7 @@ const IndustrySolutions = () => {
   }, [])
 
   return (
-    <section ref={sectionRef} className='container-custom pb-8'>
+    <section ref={sectionRef} className='container-custom pt-16 lg:pt-0 pb-8'>
       <div className='grid grid-cols-1 lg:grid-cols-2'>
         <div className='flex flex-col justify-center'>
           <span className='w-fit inline-flex items-center gap-2 font-bold text-start eyeBrow'>
@@ -58,24 +58,23 @@ const IndustrySolutions = () => {
           <img src={telecomimg} alt="telecom-industry" />
           <div className='content-card pl-4 pr-4 pb-8 text-center'>
             <h3 className='text-h3 text-foreground'>Telecom Providers</h3>
-            <p className='text-body-lg text-subtle'>Use AI to power VAS services, regional content delivery, and smart ad insertion</p>
+            <p className='sub-text text-subtle'>Use AI to power VAS services, regional content delivery, and smart ad insertion</p>
           </div>
         </div>
         <div className='industryCard'>
           <img src={mediaimg} alt="media-industry" />
           <div className='content-card pl-4 pr-4 pb-8 text-center'>
             <h3 className='text-h3 text-foreground'>Media Platforms</h3>
-            <p className='text-body-lg text-subtle'>Automate localization, streamline OTT pipelines, enhance monetization</p>
+            <p className='sub-text text-subtle'>Automate localization, streamline OTT pipelines, enhance monetization</p>
           </div>
         </div>
         <div className='industryCard'>
           <img src={gamingimg} alt="gaming-industry" />
           <div className='content-card pl-4 pr-4 pb-8 text-center'>
             <h3 className='text-h3 text-foreground'>Gaming Studios</h3>
-            <p className='text-body-lg text-subtle'>Accelerate global launches with AI voice & dialogue generation</p>
+            <p className='sub-text text-subtle'>Accelerate global launches with AI voice & dialogue generation</p>
           </div>
         </div>
-        
       </div>
     </section>
   )

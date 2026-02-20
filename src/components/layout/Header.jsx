@@ -2,13 +2,14 @@ import React, { useState } from 'react'
 import logo from '@/assets/images/logo.svg'
 import { ChevronRight, Menu, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { Link, NavLink } from 'react-router-dom'
 
 const navLinks = [
-  { label: 'Home', href: '#' },
-  { label: 'About', href: '#' },
-  { label: 'Industries', href: '#' },
-  { label: 'Whitepapers', href: '#' },
-  { label: 'Pricing', href: '#' },
+  { label: 'Home', href: '/' },
+  { label: 'About', href: '/about' },
+  { label: 'Industries', href: '/industries' },
+  { label: 'Whitepapers', href: '/white-papers' },
+  { label: 'Pricing', href: '/pricing' },
 ]
 
 const Header = () => {
@@ -18,12 +19,17 @@ const Header = () => {
   return (
       <header>
         <div className=' py-6 flex items-center justify-between'>
-            <a href="#"><img className='w-52' src={logo} alt='Zapverse Logo'/></a>
+            <Link to="/"><img className='w-52' src={logo} alt='Zapverse Logo'/></Link>
 
             {/* Desktop Nav */}
             <nav className='hidden lg:flex text-white gap-6 uppercase text-ui font-semibold'>
               {navLinks.map((link) => (
-                <a key={link.label} href={link.href}>{link.label}</a>
+                <NavLink key={link.label} to={link.href} end
+          className={({ isActive }) =>
+            `relative after:content-[''] after:absolute after:left-0 after:-bottom-1
+             after:h-[2px] after:bg-white after:transition-all after:duration-300
+             ${isActive ? 'after:w-full' : 'after:w-0 hover:after:w-full'}`
+          }>{link.label}</NavLink>
               ))}
             </nav>
 
@@ -39,13 +45,13 @@ const Header = () => {
               <div className='fixed top-20 right-0 z-20 bg-surface w-full flex flex-col pl-6 pr-6 lg:hidden'>
                 <nav className='flex flex-col py-7 text-white gap-6 uppercase text-ui font-semibold'>
                   {navLinks.map((link) => (
-                    <a 
+                    <Link 
                       key={link.label} 
-                      href={link.href}
+                      to={link.href}
                       onClick={() => setMobileDrawerOpen(false)}
                     >
                       {link.label}
-                    </a>
+                    </Link>
                   ))}
                   <Button className='text-black' variant='secondary'>
                     Contact Us <ChevronRight size={18} />

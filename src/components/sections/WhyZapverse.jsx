@@ -21,7 +21,7 @@ const WhyZapverse = () => {
       <div>
 
         {/* Section Header */}
-        <div className='lg:text-center'>
+        <div className='lg:text-center pb-4'>
           <span className='w-fit inline-flex items-center gap-2 font-bold text-start eyeBrow'>
             <span className='w-5'><Dot /></span>
             Proven, Scalable, Trusted
@@ -30,7 +30,7 @@ const WhyZapverse = () => {
             <span className='gradient-text'>We're Not Just Integrating AI. </span> <br />
             We're Redefining How Enterprises Use It.
           </h2>
-          <p className='text-body-lg text-muted pb-8 max-w-5xl mx-auto'>
+          <p className='sub-text text-muted pb-8 max-w-5xl mx-auto'>
             Zapverse turns generative AI into an efficient, ethical, and adaptable
             core for forward-thinking businesses—treating AI as a measurable driver
             of growth, not a buzzword.

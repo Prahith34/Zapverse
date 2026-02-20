@@ -7,7 +7,7 @@ import { ChevronRight } from 'lucide-react'
 
 const Hero = () => {
   return (
-    <section className='min-h-screen flex items-center justify-center'>
+    <section className='flex items-center justify-center lg:pt-4 pb-4 xl:min-h-screen xl:pb-0'>
       <div className='hero-section text-center'>
 
         {/* Hero Image — Mobile */}

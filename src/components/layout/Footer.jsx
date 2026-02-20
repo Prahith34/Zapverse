@@ -5,23 +5,24 @@ import instagram from '@/assets/icons/instagram.svg'
 import youtube from '@/assets/icons/youtube.svg'
 import Footerclip from '@/assets/images/Footerclip.webp'
 import mblfooter from '@/assets/images/mblfooter.webp'
+import { Link } from 'react-router-dom'
 
 const exploreLinks = [
-  { label: 'Platform', href: '#' },
-  { label: 'Industries', href: '#' },
-  { label: 'About Us', href: '#' },
-  { label: 'Pricing', href: '#' },
+  { label: 'Platform', href: '/ai-dubbing' },
+  { label: 'Industries', href: '/industries' },
+  { label: 'About Us', href: '/about' },
+  { label: 'Pricing', href: '/pricing' },
 ]
 
 const contactLinks = [
-  { label: 'White Papers', href: '#' },
-  { label: 'Case Studies', href: '#' },
+  { label: 'White Papers', href: '/white-papers' },
+  { label: 'Case Studies', href: '/' },
 ]
 
 const legalLinks = [
-  { label: 'Terms of use', href: '#' },
-  { label: 'Privacy policy', href: '#' },
-  { label: 'Cookie policy', href: '#' },
+  { label: 'Terms of use', href: '/' },
+  { label: 'Privacy policy', href: '/' },
+  { label: 'Cookie policy', href: '/' },
 ]
 
 const socialLinks = [
@@ -40,7 +41,7 @@ const Footer = () => {
 
           {/* Brand Column */}
           <div className='col-span-2 lg:col-span-1'>
-            <a href="/"><img src={logo} alt="Zapverse logo" /></a>
+            <Link href="/"><img src={logo} alt="Zapverse logo" /></Link>
             <p className='text-body-lg font-semibold text-muted ml-2 mt-4 lg:w-150'>
               Enabling content-first organizations to thrive in the AI era.
             </p>
@@ -48,9 +49,9 @@ const Footer = () => {
               <h3 className='uppercase text-subtle font-semibold'>Follow Us On</h3>
               <span className='inline-flex gap-2'>
                 {socialLinks.map(({ icon, alt, href }) => (
-                  <a key={alt} href={href} target="_blank" rel="noopener noreferrer" aria-label={alt}>
+                  <Link key={alt} href={href} target="_blank" rel="noopener noreferrer" aria-label={alt}>
                     <img src={icon} alt={alt} />
-                  </a>
+                  </Link>
                 ))}
               </span>
             </div>
@@ -61,7 +62,7 @@ const Footer = () => {
             <h3 className='text-white uppercase font-bold'>Explore</h3>
             <ul className='mt-4 font-semibold text-body-lg space-y-2'>
               {exploreLinks.map((link) => (
-                <li key={link.label}><a href={link.href}>{link.label}</a></li>
+                <li key={link.label}><Link to={link.href}>{link.label}</Link></li>
               ))}
             </ul>
           </div>
@@ -71,7 +72,7 @@ const Footer = () => {
             <h3 className='text-white uppercase font-bold'>Contacts</h3>
             <ul className='mt-4 font-semibold text-body-lg space-y-2'>
               {contactLinks.map((link) => (
-                <li key={link.label}><a href={link.href}>{link.label}</a></li>
+                <li key={link.label}><Link href={link.href}>{link.label}</Link></li>
               ))}
             </ul>
           </div>
@@ -86,7 +87,7 @@ const Footer = () => {
           </p>
           <ul className='lg:flex items-center list-none font-semibold text-body-lg space-y-2 lg:space-y-0 lg:space-x-18'>
             {legalLinks.map((link) => (
-              <li key={link.label}><a href={link.href}>{link.label}</a></li>
+              <li key={link.label}><Link href={link.href}>{link.label}</Link></li>
             ))}
           </ul>
         </div>

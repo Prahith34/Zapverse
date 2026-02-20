@@ -4,7 +4,7 @@ import LocalTabs from '@/components/sections/LocalTabs'
 
 const ProblemStatement = () => {
   return (
-    <section className='container-custom section-spacing'>
+    <section className='container-custom pb-16 pt-12'>
         <div className='flex flex-col items-center justify-center'>
             <span className='w-fit inline-flex items-center gap-2 font-bold text-start eyeBrow'>
             <span className='w-5'><Dot /></span>

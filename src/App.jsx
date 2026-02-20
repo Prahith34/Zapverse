@@ -1,12 +1,12 @@
 import React from 'react'
 import { Routes,Route } from 'react-router-dom'
-import Home from './pages/Home'
-import About from './pages/About'
-import AiDubbing from './pages/AiDubbing'
-import Industries from './pages/Industries'
-import WhitePapers from './pages/WhitePapers'
-import Pricing from './pages/Pricing'
-import ContactUs from './pages/ContactUs'
+import Home from '@/pages/Home'
+import About from '@/pages/About'
+import AiDubbing from '@/pages/AiDubbing'
+import Industries from '@/pages/Industries'
+import WhitePapers from '@/pages/WhitePapers'
+import Pricing from '@/pages/Pricing'
+import ContactUs from '@/pages/ContactUs'
 
 const App = () => {
   return (

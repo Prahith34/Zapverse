@@ -36,7 +36,7 @@ const InfiniteCarousel = () => {
   }, []);
 
   return (
-    <div className="relative w-full overflow-hidden py-4">
+    <div className="relative w-full overflow-hidden pt-16 py-4">
 
       {/* Gradient fade — left */}
       <div className="absolute left-0 top-0 z-10 h-full w-32 
