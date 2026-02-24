@@ -7,10 +7,12 @@ import Industries from '@/pages/Industries'
 import WhitePapers from '@/pages/WhitePapers'
 import Pricing from '@/pages/Pricing'
 import ContactUs from '@/pages/ContactUs'
+import { Toaster } from 'sonner'
 
 const App = () => {
   return (
     <div>
+      <Toaster richColors position="top-center" duration={4000} closeButton/>
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/about' element={<About/>}/>

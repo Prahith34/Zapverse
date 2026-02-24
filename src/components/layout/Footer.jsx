@@ -15,8 +15,8 @@ const exploreLinks = [
 ]
 
 const contactLinks = [
-  { label: 'White Papers', href: '/white-papers' },
-  { label: 'Case Studies', href: '/' },
+  { label: 'White Papers', ref: '/white-papers' },
+  { label: 'Case Studies', ref: '/' },
 ]
 
 const legalLinks = [
@@ -72,7 +72,7 @@ const Footer = () => {
             <h3 className='text-white uppercase font-bold'>Contacts</h3>
             <ul className='mt-4 font-semibold text-body-lg space-y-2'>
               {contactLinks.map((link) => (
-                <li key={link.label}><Link href={link.href}>{link.label}</Link></li>
+                <li key={link.label}><Link to={link.ref}>{link.label}</Link></li>
               ))}
             </ul>
           </div>
@@ -87,7 +87,7 @@ const Footer = () => {
           </p>
           <ul className='lg:flex items-center list-none font-semibold text-body-lg space-y-2 lg:space-y-0 lg:space-x-18'>
             {legalLinks.map((link) => (
-              <li key={link.label}><Link href={link.href}>{link.label}</Link></li>
+              <li key={link.label}><Link to={link.href}>{link.label}</Link></li>
             ))}
           </ul>
         </div>
