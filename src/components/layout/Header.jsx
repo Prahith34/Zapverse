@@ -33,6 +33,12 @@ const Header = () => {
               ))}
             </nav>
 
+            <Link to="/contact-us">
+              <Button className='hidden lg:flex' variant='secondary'>
+                Contact Us <ChevronRight size={18} />
+              </Button>
+            </Link>
+
             {/* Mobile Toggle */}
             <div className='lg:hidden md:flex flex-col justify-end'>
               <button className='text-white' onClick={toggleNavbar}>
@@ -59,12 +65,6 @@ const Header = () => {
                 </nav>
               </div>
             )}
-
-          <Link to="/contact-us">
-            <Button className='hidden lg:flex' variant='secondary'>
-              Contact Us <ChevronRight size={18} />
-            </Button>
-          </Link>
         </div>
       </header>
   )
