@@ -4,6 +4,7 @@ import heroimg from '@/assets/images/heroimg.png'
 import eyebrowimg from '@/assets/icons/eyebrowimg.svg'
 import { Button } from '@/components/ui/button'
 import { ChevronRight } from 'lucide-react'
+import { Link } from 'react-router-dom'
 
 const Hero = () => {
   return (
@@ -50,9 +51,11 @@ const Hero = () => {
             accuracy, and intelligence.
           </p>
           <div>
-            <Button className='text-white' variant='primary'>
-              Request A Demo <ChevronRight size={18} />
-            </Button>
+            <Link to='/contact-us'>
+              <Button className='text-white' variant='primary'>
+                Request A Demo <ChevronRight size={18} />
+              </Button>
+            </Link>
             <p className='py-4 uppercase text-[#646464] text-sm'>
               100,000+ tasks automated
             </p>

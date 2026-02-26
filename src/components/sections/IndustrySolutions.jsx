@@ -8,6 +8,7 @@ import industryAnimation from '@/assets/animations/Attachment.json'
 import telecomimg from '@/assets/images/telecomimg.png'
 import mediaimg from '@/assets/images/mediaimg.png'
 import gamingimg from '@/assets/images/gamingimg.png'
+import { Link } from 'react-router-dom'
 
 const IndustrySolutions = () => {
   const lottieRef = useRef(null)
@@ -46,7 +47,9 @@ const IndustrySolutions = () => {
             <span className='gradient-text'>Your Growth Model</span>
           </h2>
           <div>
-            <Button variant='secondary'>See How It Works <ChevronRight size={18}/></Button>
+            <Link to='/industries'>
+              <Button variant='secondary'>See How It Works <ChevronRight size={18}/></Button>
+            </Link>
           </div>
         </div>
         <div>
