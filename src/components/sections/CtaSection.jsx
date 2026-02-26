@@ -1,6 +1,7 @@
 import React from 'react'
 import { Button } from '@/components/ui/button'
 import { ChevronRight } from 'lucide-react'
+import { Link } from 'react-router-dom'
 
 const CtaSection = ({
   heading,
@@ -20,9 +21,12 @@ const CtaSection = ({
           <p className='text-body-lg text-muted pt-2 pb-8 max-w-xl mx-auto'>
             {description}
           </p>
-          <Button variant='primary' className='text-white' onClick={onButtonClick}>
-            {buttonText} <ChevronRight size={18} />
-          </Button>
+          <Link to='/contact-us'>
+            <Button variant='primary' className='text-white' onClick={onButtonClick}>
+              {buttonText} <ChevronRight size={18} />
+            </Button>
+          </Link>
+          
         </div>
       </div>
     </section>
