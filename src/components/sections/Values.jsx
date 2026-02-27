@@ -46,7 +46,7 @@ const Values = () => {
             </h2>
             <p className='text-body text-neutral-850'>Built-in context, trained on real content logic</p>
         </div>
-        <div className='grid grid-cols-1 lg:grid-cols-4 gap-4 pt-8'>
+        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-8'>
             {features.map((value)=>(
                 <div key={value.id} className='p-4 lg:border-r lg:last:border-r-0 lg:border-neutral-950'>
                     <div className='flex flex-col gap-2'>

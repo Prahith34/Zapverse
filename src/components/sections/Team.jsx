@@ -31,7 +31,7 @@ const Team = () => {
                     </p>
                 </div> 
             </div>
-            <div className='grid grid-cols-1 lg:grid-cols-3 gap-4 py-4'>
+            <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 py-4'>
                 <div className='flex flex-col items-center justify-center p-3'>
                     <img src={sam} alt="Portrait of Sam, CEO" />
                     <h4 className='text-[20px] text-foreground uppercase pt-4'>Sam Ackerman</h4>

@@ -33,7 +33,7 @@ const AboutHero = () => {
         </div>
         <div className=''>   
             <h3 className='text-h2 lg:text-center text-foreground pb-8'>Built to Scale Intelligence, Not Just Content</h3>
-            <div className='grid grid-cols-1 lg:grid-cols-3 gap-6'>
+            <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6'>
                 {statements.map((para)=>(
                     <div key={para.text} className='pl-4 border-l-2 border-[#505050]'>
                         <p className='text-neutral-850'>{para.text}</p>
