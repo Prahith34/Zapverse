@@ -8,10 +8,10 @@ import mblfooter from '@/assets/images/mblfooter.webp'
 import { Link } from 'react-router-dom'
 
 const exploreLinks = [
-  { label: 'Platform', href: '/ai-dubbing' },
   { label: 'Industries', href: '/industries' },
   { label: 'About Us', href: '/about' },
   { label: 'Pricing', href: '/pricing' },
+  { label: 'Contact Us', href: '/contact-us' }
 ]
 
 const contactLinks = [
