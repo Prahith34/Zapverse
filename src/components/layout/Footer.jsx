@@ -49,7 +49,7 @@ const Footer = () => {
               <h3 className='uppercase text-subtle font-semibold'>Follow Us On</h3>
               <span className='inline-flex gap-2'>
                 {socialLinks.map(({ icon, alt, href }) => (
-                  <Link key={alt} href={href} target="_blank" rel="noopener noreferrer" aria-label={alt}>
+                  <Link key={alt} to={href} target="_blank" rel="noopener noreferrer" aria-label={alt}>
                     <img src={icon} alt={alt} />
                   </Link>
                 ))}
