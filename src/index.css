@@ -3,18 +3,35 @@
  * ZAPVERSE DESIGN SYSTEM - TAILWIND CSS v4
  * ============================================
  * 
- * Optimized structure based on your existing design.
- * Key changes:
- * 1. Fixed @theme inline → @theme
- * 2. Better organization of tokens
- * 3. Added mobile-first utilities
- * 4. Maintained your semantic naming
+ * TABLE OF CONTENTS:
+ * 1. Imports
+ * 2. Design Tokens
+ *    2.1 Primitive Tokens
+ *    2.2 Semantic Tokens
+ * 3. Tailwind Theme Configuration
+ * 4. Base Styles
+ * 5. Utility Classes
+ *    5.1 Background Utilities
+ *    5.2 Typography Utilities
+ *    5.3 Layout Utilities
+ *    5.4 Responsive Utilities
+ * 6. Component Patterns
+ *    6.1 Cards
+ *    6.2 Interactive Elements
+ *    6.3 Special Effects
  */
 
+/* ============================================
+   1. IMPORTS
+   ============================================ */
 @import "tailwindcss";
 
 /* ============================================
-   1. PRIMITIVE TOKENS (Design Primitives)
+   2. DESIGN TOKENS
+   ============================================ */
+
+/* ============================================
+   2.1 PRIMITIVE TOKENS (Design Primitives)
    ============================================
    Base values that rarely change.
    These feed into semantic tokens below.
@@ -25,24 +42,25 @@
   --brand-purple-500: #694DFF;
   
   /* ======= Neutral Scale ======= */
-  /* Light */
+  /* Light Neutrals */
   --neutral-50: #FFFFFF;
   --neutral-100: #EEEEEE;
   --neutral-200: #F0F0F0;
-  --neutral-850: #808080;
-  
-  /* Dark */
   --neutral-300: #B2B2B2;
   --neutral-350: #ADADAD;
   --neutral-400: #ACACAC;
+  
+  /* Mid Neutrals */
   --neutral-450: #6D6D6D;
   --neutral-500: #2E2E2E;
+  --neutral-850: #808080;
+  
+  /* Dark Neutrals */
   --neutral-600: #1D1D1D;
   --neutral-700: #1A1A1A;
   --neutral-800: #171717;
   --neutral-900: #111111;
   --neutral-950: #0D0C0F;
-  
   
   /* ======= Typography ======= */
   /* Font Families */
@@ -66,7 +84,7 @@
 }
 
 /* ============================================
-   2. SEMANTIC TOKENS (Role-Based)
+   2.2 SEMANTIC TOKENS (Role-Based)
    ============================================
    What the colors/fonts are USED for.
    These can change based on theme (light/dark).
@@ -97,7 +115,7 @@
 }
 
 /* ============================================
-   3. TAILWIND THEME (@theme)
+   3. TAILWIND THEME CONFIGURATION (@theme)
    ============================================
    Register tokens with Tailwind for use in classes.
    Format: --color-{name}-{variant}: {value};
@@ -121,9 +139,9 @@
   --color-neutral-600: #1D1D1D;
   --color-neutral-700: #1A1A1A;
   --color-neutral-800: #171717;
-  --color-neutral-900: #111111;
-  --color-neutral-950: #0D0C0F;
   --color-neutral-850: #808080;
+  --color-neutral-900: #3F3F3F;
+  --color-neutral-950: #262626;
   
   /* Semantic Colors - For use as bg-background, text-foreground, etc. */
   --color-background: var(--neutral-950);
@@ -142,6 +160,7 @@
   /* Font Families */
   --font-family-heading: "Archivo", sans-serif;
   --font-family-body: "IBM Plex Mono", monospace;
+  --font-family-text: "IBM Plex Sans", sans-serif;
   
   /* Font Sizes - Responsive with clamp() */
   /* Display (Hero) */
@@ -177,8 +196,8 @@
 
 /* ============================================
    4. BASE STYLES
-   ============================================
-*/
+   ============================================ */
+
 * {
   /* border-color: var(--color-input); */
 }
@@ -192,20 +211,22 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-ul li{
-color: #808080;
+/* ===== List Styles ===== */
+ul li {
+  color: #808080;
 }
 
-ul li:hover{
+ul li:hover {
   color: #FFFFFF;
   transition-duration: 100ms;
 }
 
-.copyRight{
+/* ===== Text Styles ===== */
+.copyRight {
   color: var(--neutral-450);
 }
 
-.eyeBrow{
+.eyeBrow {
   color: var(--neutral-350);
   font-family: var(--font-heading);
   font-size: 14px;
@@ -217,41 +238,22 @@ ul li:hover{
   border-radius: 45px;
 }
 
-.valuecard{
-  background-color: var(--neutral-600);
-}
-
-.lastValue{
-  background-image: url('/src/assets/images/mobilevalue.png');
-  height: 350px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: right top;
-  @media(min-width:768px){
-    background-image: url('/src/assets/images/lastvalue.png');
-    background-position: right center;
-    height: 200px;
-  }
-}
-
 /* ============================================
    5. UTILITY CLASSES
-   ============================================
-   Your custom semantic classes.
-*/
+   ============================================ */
+
 @layer utilities {
   
-  /* ===== BACKGROUND UTILITIES ===== */
+  /* ============================================
+     5.1 BACKGROUND UTILITIES
+     ============================================ */
+  
+  /* Gradient Backgrounds */
   .bg-gradient-primary {
     background: var(--gradient-primary);
   }
 
-  /* .btn-gradient{
-    linear-gradient(to right, A 0%, B 51%, A 100%)
-    background: linear-gradient(to right,#2DC2FF 0%, #694DFF );
-  } */
-
-  .bg-radial{
+  .bg-radial {
     background: var(--color-bg-light);
   }
   
@@ -259,12 +261,75 @@ ul li:hover{
     background: var(--color-bg-light);
   }
 
-  .color-gray{
+  /* Image Backgrounds */
+  .bg-hero {
+    background-image: url('./assets/images/herosection.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+
+  .bg-hero-section {
+    width: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
+  @media (min-width: 768px) {
+    .bg-hero-section {
+      background-image: url('/src/assets/images/semibg.png');
+      min-height: clamp(400px, 55vw, 450px);
+    }
+  }
+
+  .back-logo {
+    background-image: url('./assets/images/zapblacklogo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+  }
+
+  /* Section-Specific Backgrounds */
+  .cta-section {
+    width: 100%;
+    height: 420px;
+    background-image: url('/src/assets/images/mobilecta.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 16px;
+  }
+
+  @media (min-width: 768px) {
+    .cta-section {
+      background-image: url('/src/assets/images/contactbg.png');
+    }
+  }
+
+  .graph-section {
+    width: 100%;
+    min-height: clamp(900px, 60vw, 850px);
+    background-image: url('/src/assets/images/mblgraph.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+  }
+
+  @media (min-width: 768px) {
+    .graph-section {
+      background-image: url('/src/assets/images/graph.png');
+      min-height: clamp(650px, 55vw, 750px);
+    }
+  }
+
+  /* Color Utilities */
+  .color-gray {
     color: var(--neutral-850);
   }
-  
-  
-  /* ===== TYPOGRAPHY UTILITIES ===== */
+
+  /* ============================================
+     5.2 TYPOGRAPHY UTILITIES
+     ============================================ */
   
   /* Display (Hero) */
   .text-display {
@@ -279,51 +344,6 @@ ul li:hover{
     font-family: var(--font-heading);
     font-size: var(--font-size-h1);
     font-weight: var(--font-weight-bold);
-  }
-
-  .bg-hero{
-    background-image: url('./assets/images/herosection.png');
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-  }
-
-  .cta-section{
-    width: 100%;
-    height: 420px;
-    background-image: url('/src/assets/images/mobilecta.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    border-radius: 16px;
-    @media(min-width:768px){
-      background-image: url('/src/assets/images/contactbg.png');
-    }
-  }
-
-  .graph-section{
-    width: 100%;
-    /* Fluid height scaling */
-    min-height: clamp(900px, 60vw, 850px);
-    background-image: url('/src/assets/images/mblgraph.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: bottom center;
-    @media(min-width:768px){
-      background-image: url('/src/assets/images/graph.png');
-      /* Slightly smaller max for desktop */
-      min-height: clamp(650px, 55vw, 750px);
-    }
-  }
-  
-  
-  /* Mobile adjustment for H1 */
-  @media (max-width: 768px) {
-    .text-display{
-      line-height: 48px;
-    }
-    .text-h1 {
-      line-height: 40px;
-    }
   }
   
   /* H2 - Subsections */
@@ -355,12 +375,37 @@ ul li:hover{
     font-family: var(--font-heading);
   }
 
-  .tab-title{
+  /* Special Text Styles */
+  .sub-text {
+    font-family: var(--font-family-text);
+    font-size: var(--font-size-body-lg);
+  }
+
+  .tab-title {
     font-family: var(--font-heading);
     font-size: 18px;
   }
   
-  /* ===== MOBILE-FIRST RESPONSIVE UTILITIES ===== */
+  /* Mobile Typography Adjustments */
+  @media (max-width: 768px) {
+    .text-display {
+      line-height: 48px;
+    }
+    
+    .text-h1 {
+      line-height: 40px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .text-h1 {
+      line-height: 56px;
+    }
+  }
+  
+  /* ============================================
+     5.3 LAYOUT UTILITIES
+     ============================================ */
   
   /* Container with max-width */
   .container-custom {
@@ -376,9 +421,6 @@ ul li:hover{
     .container-custom {
       padding-left: 2rem;
       padding-right: 2rem;
-    }
-    .text-h1{
-      line-height: 56px;
     }
   }
   
@@ -408,32 +450,99 @@ ul li:hover{
       padding-bottom: 4rem;
     }
   }
-  
-  /* Card base styles */
-  .card-base {
-    background-color: var(--color-card);
-    border-radius: var(--radius-lg);
-    padding: 1.5rem;        /* Mobile: 24px */
-  }
-  
-  @media (min-width: 768px) {
-    .card-base {
-      padding: 2rem;        /* Tablet: 32px */
-    }
-  }
-  
-  @media (min-width: 1024px) {
-    .card-base {
-      padding: 2.5rem;      /* Desktop: 40px */
-    }
+
+  /* Interaction States */
+  .no-hover {
+    pointer-events: none;
   }
 }
 
 /* ============================================
    6. COMPONENT PATTERNS
-   ============================================
-   Common reusable patterns.
-*/
+   ============================================ */
+
+/* ============================================
+   6.1 CARDS
+   ============================================ */
+
+/* Base Card Styles */
+.card-base {
+  background-color: var(--color-card);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;        /* Mobile: 24px */
+}
+
+@media (min-width: 768px) {
+  .card-base {
+    padding: 2rem;        /* Tablet: 32px */
+  }
+}
+
+@media (min-width: 1024px) {
+  .card-base {
+    padding: 2.5rem;      /* Desktop: 40px */
+  }
+}
+
+/* Card Variants */
+.card-data {
+  background-color: var(--color-card);
+  border-radius: var(--radius-sm);
+  padding: 1rem;
+  border-color: #242424;
+}
+
+.valuecard {
+  background-color: var(--neutral-600);
+}
+
+.lastValue {
+  background-image: url('/src/assets/images/mobilevalue.png');
+  height: 350px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right top;
+}
+
+@media (min-width: 768px) {
+  .lastValue {
+    background-image: url('/src/assets/images/lastvalue.png');
+    background-position: right center;
+    height: 200px;
+  }
+}
+
+.industryCard {
+  background-color: var(--color-neutral-600);
+  border: 1px solid #2B2B2B;
+  border-radius: 16px;
+}
+
+.tabCard {
+  background-color: var(--color-neutral-600);
+  border: 1px solid #2B2B2B;
+  border-radius: 8px;
+}
+
+.pricing-card {
+  background-color: #1A1A1A;
+  border: 1px solid #242424;
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+/* ============================================
+   6.2 INTERACTIVE ELEMENTS
+   ============================================ */
+
+/* Hover States */
+.pricing-card:hover {
+  border-color: var(--color-neutral-400);
+}
+
+/* ============================================
+   6.3 SPECIAL EFFECTS
+   ============================================ */
 
 /* Gradient text effect */
 .gradient-text {
@@ -455,16 +564,4 @@ ul li:hover{
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-}
-
-.industryCard{
-  background-color: var(--color-neutral-600);
-  border: 1px solid #2B2B2B;
-  border-radius: 16px;
-}
-
-.tabCard{
-  background-color: var(--color-neutral-600);
-  border: 1px solid #2B2B2B;
-  border-radius: 8px;
 }
