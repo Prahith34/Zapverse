@@ -1,10 +1,16 @@
 import React from 'react'
+import Header from '@/components/layout/Header'
+import Footer from '@/components/layout/Footer'
+import CtaSection from '@/components/sections/CtaSection'
 
 const AiDubbing = () => {
   return (
-    <div>
-      <h1>Ai Dubbing</h1>
-    </div>
+    <main>
+      <section className='container-custom'><Header/></section>
+
+      <CtaSection/>
+      <Footer/>
+    </main>
   )
 }
 
