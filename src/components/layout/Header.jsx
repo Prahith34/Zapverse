@@ -27,7 +27,7 @@ const Header = () => {
                 <NavLink key={link.label} to={link.href} end
           className={({ isActive }) =>
             `relative after:content-[''] after:absolute after:left-0 after:-bottom-1
-             after:h-[2px] after:bg-white after:transition-all after:duration-300
+             after:h-0.5 after:bg-white after:transition-all after:duration-300
              ${isActive ? 'after:w-full' : 'after:w-0 hover:after:w-full'}`
           }>{link.label}</NavLink>
               ))}
