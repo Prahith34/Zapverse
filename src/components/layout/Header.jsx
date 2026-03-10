@@ -59,9 +59,11 @@ const Header = () => {
                       {link.label}
                     </Link>
                   ))}
-                  <Button className='text-black' variant='secondary'>
-                    Contact Us <ChevronRight size={18} />
-                  </Button>
+                  <Link to='/contact-us' >
+                    <Button className='text-black' variant='secondary'>
+                      Contact Us <ChevronRight size={18} />
+                    </Button>       
+                  </Link>
                 </nav>
               </div>
             )}
