@@ -43,7 +43,7 @@ setIsLoading(true);
         from_email: data.email,
         message: data.message,
       },
-      import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
     );
     toast.success("Message sent!", {
       description: "We'll get back to you as soon as possible.",
