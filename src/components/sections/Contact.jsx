@@ -91,7 +91,7 @@ setIsLoading(true);
                         <FormControl>
                           <Input placeholder="Enter Your Name" {...field} />
                         </FormControl>
-                        <FormMessage /> {/* Automatically shows validation errors */}
+                        <FormMessage className="text-yellow-500" /> {/* Automatically shows validation errors */}
                       </FormItem>
                     )}/>
 
@@ -118,7 +118,7 @@ setIsLoading(true);
                           <FormControl>
                             <Textarea placeholder="I'm interested in Zapverse for my Company. I'd like to learn more about..." {...field} />
                           </FormControl>
-                          <FormMessage />
+                          <FormMessage className="text-yellow-500" />
                         </FormItem>
                       )}
                     />
