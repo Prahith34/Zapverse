@@ -4,6 +4,7 @@ import accuracy from '@/assets/icons/accuracy.svg'
 import charge from '@/assets/icons/charge.svg'
 import device from '@/assets/icons/device.svg'
 import evolve from '@/assets/icons/evolve.svg'
+import { motion } from 'framer-motion'
 
 const features=[
     {
@@ -49,11 +50,11 @@ const Values = () => {
         <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-8'>
             {features.map((value)=>(
                 <div key={value.id} className='p-4 lg:border-r lg:last:border-r-0 lg:border-neutral-950'>
-                    <div className='flex flex-col gap-2'>
+                    <motion.div initial={{opacity:0, y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true,amount:0.3}} transition={{duration:0.6, ease:"easeOut"}} className='flex flex-col gap-2'>
                         <img src={value.src} alt={value.title} width={80}/>
                         <h3 className='text-h3 text-foreground uppercase'>{value.title}</h3>
                         <p className='sub-text text-neutral-850'>{value.subtext}</p>
-                    </div>
+                    </motion.div>
                 </div>
             ))}
         </div>

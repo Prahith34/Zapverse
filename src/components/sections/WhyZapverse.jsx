@@ -4,6 +4,7 @@ import elevenlabs from '@/assets/images/elevenlabs.png'
 import sonix from '@/assets/images/sonix.png'
 import replica from '@/assets/images/replica.png'
 import waymark from '@/assets/images/waymark.png'
+import { motion } from 'framer-motion'
 
 const ValueCard = ({ title, description, children }) => (
   <div className='rounded-2xl border valuecard border-zinc-800 bg-zinc-900/50 p-6 flex flex-col justify-between gap-4 h-full'>
@@ -41,20 +42,20 @@ const WhyZapverse = () => {
         <div className='grid grid-cols-1 lg:grid-cols-[1.25fr_1fr] gap-4'>
           <div className='rounded-2xl border valuecard border-zinc-800 bg-zinc-900/50 p-6 flex flex-col justify-between gap-4 h-full'>
             <div>
-              <h3 className='text-foreground font-bold uppercase text-h3'>Partnership Over Handoff</h3>
-              <p className='text-subtle text-sm mt-2 uppercase'>We don't just drop tools, we stay to fine-tune, optimize, and scale with you.</p>
+              <motion.h3 initial={{opacity:0, y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true,amount:0.3}} transition={{duration:0.6, ease:"easeOut"}} className='text-foreground font-bold uppercase text-h3'>Partnership Over Handoff</motion.h3>
+              <motion.p initial={{opacity:0, y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true,amount:0.3}} transition={{duration:0.6, ease:"easeOut"}} className='text-subtle text-sm mt-2 uppercase'>We don't just drop tools, we stay to fine-tune, optimize, and scale with you.</motion.p>
             </div>
-            <div className='flex items-center gap-4 flex-wrap mt-4'>
+            <motion.div initial={{opacity:0, y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true,amount:0.3}} transition={{duration:0.6, ease:"easeOut"}} className='flex items-center gap-4 flex-wrap mt-4'>
               <img src={elevenlabs} alt='ElevenLabs' />
               <img src={sonix}      alt='Sonix' />
               <img src={replica}    alt='Replica' />
               <img src={waymark}    alt='Waymark' />
-            </div>
+            </motion.div>
           </div>
           <div className='rounded-2xl border valuecard border-zinc-800 bg-zinc-900/50 p-6 flex flex-col justify-between gap-4 h-full'>
             <div>
-              <h3 className='text-foreground font-bold uppercase text-h3'>Purpose Before Product</h3>
-              <p className='text-subtle text-sm mt-2 uppercase'>We start with business outcomes—like a 10% retention lift—not just algorithms. Zapverse aligns AI around real goals, defines clear KPIs, and accelerates adoption by proving value where it counts: the bottom line.</p>
+              <motion.h3 initial={{opacity:0, y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true,amount:0.3}} transition={{duration:0.6, ease:"easeOut"}} className='text-foreground font-bold uppercase text-h3'>Purpose Before Product</motion.h3>
+              <motion.p initial={{opacity:0, y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true,amount:0.3}} transition={{duration:0.6, ease:"easeOut"}} className='text-subtle text-sm mt-2 uppercase'>We start with business outcomes—like a 10% retention lift—not just algorithms. Zapverse aligns AI around real goals, defines clear KPIs, and accelerates adoption by proving value where it counts: the bottom line.</motion.p>
             </div>
           </div>
         </div>
@@ -63,14 +64,14 @@ const WhyZapverse = () => {
         <div className='grid grid-cols-1 lg:grid-cols-[0.5fr_1fr] gap-4 py-4'>
           <div className='rounded-2xl border valuecard border-zinc-800 bg-zinc-900/50 p-6 flex flex-col justify-between gap-4 h-full'>
             <div>
-              <h3 className='text-foreground font-bold uppercase text-h3'>Clarity Over Complexity</h3>
-              <p className='text-subtle text-sm mt-2 uppercase'>Zapverse AI simplifies operations by removing bottlenecks and delivering insights your team can act on instantly.</p>
+              <motion.h3 initial={{opacity:0, y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true,amount:0.3}} transition={{duration:0.6, ease:"easeOut"}} className='text-foreground font-bold uppercase text-h3'>Clarity Over Complexity</motion.h3>
+              <motion.p initial={{opacity:0, y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true,amount:0.3}} transition={{duration:0.6, ease:"easeOut"}} className='text-subtle text-sm mt-2 uppercase'>Zapverse AI simplifies operations by removing bottlenecks and delivering insights your team can act on instantly.</motion.p>
             </div>
           </div>
           <div className='rounded-2xl border lastValue valuecard border-zinc-800 bg-zinc-900/50 p-6 flex flex-col justify-end lg:justify-between gap-4 h-full'>
             <div>
-              <h3 className='text-foreground font-bold uppercase text-h3'>Scalability With Accountability</h3>
-              <p className='text-subtle text-sm mt-2 max-w-xl uppercase'>Our tools are built for performance, but always with governance in mind.</p>
+              <motion.h3 initial={{opacity:0, y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true,amount:0.3}} transition={{duration:0.6, ease:"easeOut"}} className='text-foreground font-bold uppercase text-h3'>Scalability With Accountability</motion.h3>
+              <motion.p initial={{opacity:0, y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true,amount:0.3}} transition={{duration:0.6, ease:"easeOut"}} className='text-subtle text-sm mt-2 max-w-xl uppercase'>Our tools are built for performance, but always with governance in mind.</motion.p>
             </div>
           </div>
         </div>

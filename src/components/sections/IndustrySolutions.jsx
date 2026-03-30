@@ -1,6 +1,7 @@
 import React from 'react'
 import { Button } from '@/components/ui/button'
 import { useRef, useEffect } from 'react'
+import {motion} from "framer-motion"
 import { ChevronRight } from 'lucide-react'
 import { Dot } from 'lucide-react'
 import Lottie from 'lottie-react'
@@ -57,27 +58,27 @@ const IndustrySolutions = () => {
         </div>
       </div>
       <div className='grid grid-cols-1 lg:grid-cols-3 gap-6 -mt-20 lg:mt-0 z-30'>
-        <div className='industryCard'>
+        <motion.div initial={{opacity:0, y:30}} whileInView={{opacity:1,y:0}} viewport={{once:true,amount:0.3}} transition={{duration:0.6, ease:"easeOut"}} className='industryCard'>
           <img src={telecomimg} alt="telecom-industry" />
           <div className='content-card pl-4 pr-4 pb-8 text-center'>
             <h3 className='text-h3 text-foreground'>Telecom Providers</h3>
             <p className='sub-text text-subtle'>Use AI to power VAS services, regional content delivery, and smart ad insertion</p>
           </div>
-        </div>
-        <div className='industryCard'>
+        </motion.div>
+        <motion.div initial={{opacity:0, y:30}} whileInView={{opacity:1,y:0}} viewport={{once:true,amount:0.3}} transition={{duration:0.6, ease:"easeOut"}} className='industryCard'>
           <img src={mediaimg} alt="media-industry" />
           <div className='content-card pl-4 pr-4 pb-8 text-center'>
             <h3 className='text-h3 text-foreground'>Media Platforms</h3>
             <p className='sub-text text-subtle'>Automate localization, streamline OTT pipelines, enhance monetization</p>
           </div>
-        </div>
-        <div className='industryCard'>
+        </motion.div>
+        <motion.div initial={{opacity:0, y:30}} whileInView={{opacity:1,y:0}} viewport={{once:true,amount:0.3}} transition={{duration:0.6, ease:"easeOut"}} className='industryCard'>
           <img src={gamingimg} alt="gaming-industry" />
           <div className='content-card pl-4 pr-4 pb-8 text-center'>
             <h3 className='text-h3 text-foreground'>Gaming Studios</h3>
             <p className='sub-text text-subtle'>Accelerate global launches with AI voice & dialogue generation</p>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   )

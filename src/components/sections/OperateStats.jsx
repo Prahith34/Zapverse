@@ -1,5 +1,6 @@
 import React from 'react'
 import { Dot } from 'lucide-react'
+import { motion } from 'framer-motion'
 import linechart from '@/assets/images/linechart.png'
 
 const stats = [
@@ -49,7 +50,7 @@ const OperateStats = () => {
             </div>
             <div className='flex flex-col justify-center'>
                 {stats.map((textData)=>(
-                    <div key={textData.datapoint} className='grid grid-cols-1 lg:grid-cols-[0.4fr_1fr] gap-2 lg:gap-6 py-4 border-b border-neutral-900'>
+                    <motion.div initial={{opacity:0, y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true,amount:0.3}} transition={{duration:0.6, ease:"easeOut"}} key={textData.datapoint} className='grid grid-cols-1 lg:grid-cols-[0.4fr_1fr] gap-2 lg:gap-6 py-4 border-b border-neutral-900'>
                         <div className='inline-flex gap-4 items-center lg:flex lg:flex-col lg:items-start lg:gap-1'>
                             <h2 className='text-5xl text-muted'>{textData.data}</h2>
                             <p className='sub-text text-muted max-w-50 font-medium'>{textData.datapoint}</p>
@@ -57,7 +58,7 @@ const OperateStats = () => {
                         <div className='flex flex-col justify-center'>
                             <p className='sub-text font-medium text-muted'>{textData.statData}</p>
                         </div>
-                    </div>
+                    </motion.div>
                 ))}
             </div>
         </div>

@@ -7,6 +7,7 @@ import fileicon from '@/assets/icons/fileicon.svg'
 import meter from '@/assets/icons/meter.svg'
 import rise from '@/assets/icons/rise.svg'
 import mobile from '@/assets/icons/mobile.svg'
+import { motion } from 'framer-motion'
 
 const Team = () => {
   return (
@@ -32,21 +33,21 @@ const Team = () => {
                 </div> 
             </div>
             <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 py-4'>
-                <div className='flex flex-col items-center justify-center p-3'>
+                <motion.div initial={{opacity:0, y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true,amount:0.3}} transition={{duration:0.6, ease:"easeOut"}} className='flex flex-col items-center justify-center p-3'>
                     <img src={sam} alt="Portrait of Sam, CEO" />
                     <h4 className='text-[20px] text-foreground uppercase pt-4'>Sam Ackerman</h4>
                     <p className='uppercase text-subtle'>CEO</p>
-                </div>
-                <div className='flex flex-col items-center justify-center p-3'>
+                </motion.div>
+                <motion.div initial={{opacity:0, y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true,amount:0.3}} transition={{duration:0.6, ease:"easeOut"}} className='flex flex-col items-center justify-center p-3'>
                     <img src={daniel} alt="Portrait of Daniel Ricardo, CTO" />
                     <h4 className='text-[20px] text-foreground uppercase pt-4'>Daniel Ricardo</h4>
                     <p className='uppercase text-subtle'>CTO</p>
-                </div>
-                <div className='flex flex-col items-center justify-center p-3'>
+                </motion.div>
+                <motion.div initial={{opacity:0, y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true,amount:0.3}} transition={{duration:0.6, ease:"easeOut"}} className='flex flex-col items-center justify-center p-3'>
                     <img src={sia} alt="Portrait of Maya Saran, CFO" />
                     <h4 className='text-[20px] text-foreground uppercase pt-4'>Maya Saran</h4>
                     <p className='uppercase text-subtle'>CFO</p>
-                </div>
+                </motion.div>
             </div>
         </div>
         <div className='min-h-150 back-logo'>

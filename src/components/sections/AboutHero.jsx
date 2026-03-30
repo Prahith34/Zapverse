@@ -1,5 +1,6 @@
 import React from 'react'
 import eyebrowimg from '@/assets/icons/eyebrowimg.svg'
+import { motion } from 'framer-motion';
 
 const statements = [
     {text: 'The Problem. As demand for multilingual, multi-format content exploded, traditional workflows broke. Delays, duplicated efforts, and guesswork became the norm.'},
@@ -36,7 +37,7 @@ const AboutHero = () => {
             <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6'>
                 {statements.map((para)=>(
                     <div key={para.text} className='pl-4 border-l-2 border-[#505050]'>
-                        <p className='text-neutral-850'>{para.text}</p>
+                        <motion.p initial={{opacity:0, y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true,amount:0.3}} transition={{duration:0.6, ease:"easeOut"}} className='text-neutral-850'>{para.text}</motion.p>
                     </div>
                 ))}
             </div>
