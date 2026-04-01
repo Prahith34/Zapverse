@@ -104,7 +104,7 @@ setIsLoading(true);
                           <FormControl>
                             <Input type="email" placeholder="john@example.com" {...field} />
                           </FormControl>
-                          <FormMessage />
+                          <FormMessage className="text-yellow-500" />
                         </FormItem>
                       )}
                     />
